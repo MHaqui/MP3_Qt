@@ -26,6 +26,8 @@ if __name__ == '__main__' :
     but_play = QPushButton(">")
     but_restart = QPushButton("<<")
     but_sound = QPushButton("mute")
+    but_buy = QPushButton("BUY")
+    
 
     layout_button = QHBoxLayout()
     layout_button.addWidget(but_skip)
@@ -38,7 +40,9 @@ if __name__ == '__main__' :
 
     slayout2 = QVBoxLayout()
     slayout2.addWidget(song_name)
-    slayout2.addWidget(but_sound)
+    # slayout2.addWidget(but_sound)
+    # slayout.addWidget(but_buy)
+    # but_sound.move(200,200)
     slayout2.addWidget(song_artist)
     slayout2.addWidget(song_album)
     slayout2.addLayout(layout_button)
