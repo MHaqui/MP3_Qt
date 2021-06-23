@@ -45,13 +45,6 @@ class MyWidget(QWidget):
         self.but_buy.setFixedSize(50,20)
 
         self.slider = QScrollBar()
-    
-
-        layout25 = QHBoxLayout()
-        layout25.addWidget(self.but_skip)
-        layout25.addWidget(self.but_play)
-        layout25.addWidget(self.but_restart)
-        layout25.setContentsMargins(0,0,100,0)
 
         layout21 = QHBoxLayout()
         layout21.addWidget(self.song_name)
@@ -63,6 +56,11 @@ class MyWidget(QWidget):
         layout24.addWidget(self.but_buy)
         layout24.setSpacing(0)
 
+        layout25 = QHBoxLayout()
+        layout25.addWidget(self.but_restart)
+        layout25.addWidget(self.but_play)
+        layout25.addWidget(self.but_skip)
+        layout25.setContentsMargins(0,0,100,0)
 
         layout1 = QVBoxLayout()
         layout1.addWidget(self.image)
