@@ -9,8 +9,8 @@ class MyWidget(QWidget):
     def __init__(self,parent = None):
         super().__init__()
 
-        self.dark = "#3B3A44"
-
+        #self.setAttribute(Qt.WA_TranslucentBackground, True)
+        self.setWindowFlag(Qt.FramelessWindowHint)
         self.pixmap = QPixmap()
         self.pixmap.load("C:/Users/maxim/Pictures/Saved Pictures/Tigre")
         self.pixmap = self.pixmap.scaled(100,100)
@@ -83,7 +83,6 @@ class MyWidget(QWidget):
     def paintEvent(self, event: QPaintEvent):
 
         painter = QPainter(self)
-        painter.setBrush(QBrush(QColor(150)))
         painter.drawPixmap(10,10,self.pixmap)
 
 
@@ -98,7 +97,8 @@ if __name__ == '__main__' :
     app = QApplication(sys.argv)
 
     widget = MyWidget()
-    widget.move(600,400)
+    widget.move(500,400) #center
+    #widget.move(1400,30) # High-right corner
     widget.resize(500,200)
     widget.setFixedSize(500,120)
     widget.setWindowTitle("musique")
