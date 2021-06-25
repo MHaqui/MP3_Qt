@@ -22,14 +22,20 @@ class MyWidget(QWidget):
         self.song_artist = QLabel("The national")
         self.song_album = QLabel("High Violet")
 
-        self.i = 3
+        self.i = 0
 
         self.song_1 = QPushButton("1. Terrible Love")
+        self.song_1.setStyleSheet("background-color : white")
         self.song_2 = QPushButton("2. Sorrow")
+        self.song_2.setStyleSheet("background-color : white")
         self.song_3 = QPushButton("3. Anyone's Ghost")
+        self.song_3.setStyleSheet("background-color : white")
         self.song_4 = QPushButton("4. Little Faith")
+        self.song_4.setStyleSheet("background-color : white")
         self.song_5 = QPushButton("5. Arfraid of Evryone")
+        self.song_5.setStyleSheet("background-color : white")
         self.song_6 = QPushButton("6. Bloodbuzz Ohio")
+        self.song_6.setStyleSheet("background-color : white")
         self.rating = QLabel("Rating : 4/5")
 
         self.songs = QListWidget()
@@ -93,7 +99,6 @@ class MyWidget(QWidget):
         self.setLayout(layout)
 
         #Actions boutons
-
         self.song_1.clicked.connect(self.setSong_1)
         self.song_2.clicked.connect(self.setSong_2)
         self.song_3.clicked.connect(self.setSong_3)
