@@ -9,6 +9,9 @@ class MyWidget(QWidget):
     def __init__(self,parent = None):
         super().__init__()
 
+        #blue = QColor()
+        #blue.setNamedColor("blue")
+
         #self.setAttribute(Qt.WA_TranslucentBackground, True)
         self.setWindowFlag(Qt.FramelessWindowHint)
         self.pixmap = QPixmap()
@@ -18,6 +21,8 @@ class MyWidget(QWidget):
         self.song_name = QLabel("Afraid of everyone")
         self.song_artist = QLabel("The national")
         self.song_album = QLabel("High Violet")
+
+        self.i = 3
 
         self.song_1 = QPushButton("1. Terrible Love")
         self.song_2 = QPushButton("2. Sorrow")
@@ -34,7 +39,14 @@ class MyWidget(QWidget):
         self.songs.addItem("4. Little Faith")
         self.songs.addItem("5. Arfraid of Evryone")
         self.songs.addItem("6. Bloodbuzz Ohio")
+        self.songs.setItemWidget(self.songs.item(0), self.song_1)
+        self.songs.setItemWidget(self.songs.item(1), self.song_2)
+        self.songs.setItemWidget(self.songs.item(2), self.song_3)
+        self.songs.setItemWidget(self.songs.item(3), self.song_4)
+        self.songs.setItemWidget(self.songs.item(4), self.song_5)
+        self.songs.setItemWidget(self.songs.item(5), self.song_6)
         self.songs.setFixedSize(150,100)
+
 
         self.but_skip = QPushButton(">>")
         self.but_play = QPushButton(">")
@@ -80,11 +92,56 @@ class MyWidget(QWidget):
 
         self.setLayout(layout)
 
-    def paintEvent(self, event: QPaintEvent):
+        #Actions boutons
+
+        self.song_1.clicked.connect(self.setSong_1)
+        self.song_2.clicked.connect(self.setSong_2)
+        self.song_3.clicked.connect(self.setSong_3)
+        self.song_4.clicked.connect(self.setSong_4)
+        self.song_5.clicked.connect(self.setSong_5)
+        self.song_6.clicked.connect(self.setSong_6)
+        self.but_skip.clicked.connect(self.NextSong)
+        
+        # Méthodes
+    def NextSong(self):
+        self.i = self.i+1
+        self.song_name.setText(self.songs.item(self.i%6).text())
+    
+    def setSong_1 (self):
+        self.i = 0
+        self.song_name.setText(self.song_1.text())
+
+    def setSong_2 (self):
+        self.i = 1
+        self.song_name.setText(self.song_2.text())
+
+    def setSong_3 (self):
+        self.i = 2
+        self.song_name.setText(self.song_3.text())
+
+    def setSong_4 (self):
+        self.i = 3
+        self.song_name.setText(self.song_5.text())
+
+    def setSong_5 (self):
+        self.i = 4
+        self.song_name.setText(self.song_5.text())
+
+    def setSong_6 (self):
+        self.i = 5
+        self.song_name.setText(self.song_6.text())
+        
+
+    def paintEvent(self, event : QPaintEvent) :
 
         painter = QPainter(self)
         painter.drawPixmap(10,10,self.pixmap)
-
+        #pen_blue = QPen()
+        #pen_blue.setColor(blue)
+    
+    #def mousePressEvent(self, event : QMouseEvent) :
+        #print("hello")
+        
 
 
 
