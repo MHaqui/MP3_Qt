@@ -44,10 +44,9 @@ class MyWidget(QWidget):
         for i in range(6):
             self.Wsongs.addItem(self.list_songs[i].text())
             self.Wsongs.setItemWidget(self.Wsongs.item(i), self.list_songs[i])
-            self.list_songs[i].setStyleSheet("background-color : white")
-            
+            self.list_songs[i].setStyleSheet("background-color : white")    
         self.Wsongs.setFixedSize(150,100)
-        self.list_songs[1].setStyleSheet("background-color : grey")
+        self.list_songs[self.ind].setStyleSheet("background-color : grey")
 
         self.but_skip = QPushButton(">>")
         self.but_play = QPushButton(">")
@@ -103,9 +102,18 @@ class MyWidget(QWidget):
         self.song_5.clicked.connect(self.setSong_5)
         self.song_6.clicked.connect(self.setSong_6)
         self.but_skip.clicked.connect(self.NextSong)
-        self.but_restart.clicked.connect(self.BefSong)
+        self.but_restart.clicked.connect(self.BefSong)  
         self.but_play.clicked.connect(self.Play)
-        
+
+        #Loading songs 
+        #playlist = QMediaPlaylist()
+        #playlist.addMedia(QUrl = FromLocalFile("C:/Users/maxim/Documents/Musique/MC_Solaar/MC Solaar/1. 11ème commandement.mp3"))
+        #playlist.setCurrentIndex(1)
+
+        #player = QMediaPlayer()
+        #player.setPlaylist(playlist)
+
+        #player.play();
         # Méthodes
 
     def Play(self):
