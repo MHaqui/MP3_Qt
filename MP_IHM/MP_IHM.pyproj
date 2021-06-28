@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="class1.py">
+    <Compile Include="Song.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MP_IHM.py" />
